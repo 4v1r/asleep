@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asleep1234 - Music Label</title>
+    <style>
+        body {
+            font-family: 'Circular', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(45deg, #002c88, #0055cc);
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            margin: 0;
+            font-size: 4em;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .zzz {
+            font-size: 0.6em;
+            margin-left: 10px;
+            animation: float 3s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .contact {
+            margin-top: 10px;
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+        .moon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #289eff;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #289eff;
+        }
+        .music-note {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0;
+            animation: floatNote 8s infinite ease-in-out;
+        }
+        @keyframes floatNote {
+            0% {
+                transform: translateY(100%) translateX(-100%);
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%) translateX(100%);
+                opacity: 0;
+            }
+        }
+        .artists {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .artist {
+            margin: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background-color: #181818;
+            border-radius: 8px;
+            padding: 20px;
+            box-sizing: border-box;
+            flex: 1 1 calc(20% - 40px); /* Adjust width to fit more artists per row */
+        }
+        @media (max-width: 1200px) {
+            .artist {
+                flex: 1 1 calc(25% - 40px); /* 4 artists per row */
+            }
+        }
+        @media (max-width: 900px) {
+            .artist {
+                flex: 1 1 calc(33.33% - 40px); /* 3 artists per row */
+            }
+        }
+        @media (max-width: 600px) {
+            .artist {
+                flex: 1 1 calc(50% - 40px); /* 2 artists per row */
+            }
+        }
+        .artist:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,85,204,0.3);
+        }
+        .artist img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .artist h3 {
+            margin-top: 15px;
+            color: #1DB954;
+            font-size: 1.2em;
+        }
+        footer {
+            background-color: #0c77e9;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+        .waves {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15vh;
+            min-height: 100px;
+            max-height: 150px;
+            z-index: -1;
+        }
+        .parallax > use {
+            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+        }
+        .parallax > use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+        }
+        .parallax > use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+        }
+        .parallax > use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+        }
+        .parallax > use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+        }
+        @keyframes move-forever {
+            0% {
+                transform: translate3d(-90px,0,0);
+            }
+            100% { 
+                transform: translate3d(85px,0,0);
+            }
+        }
+        main {
+            padding-top: 20px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="moon"></div>
+        <div class="container">
+            <h1>asleep1234 <span class="zzz">💤</span></h1>
+            <p class="contact">Contact: contact@asleep1234.net</p>
+        </div>
+        <div class="music-note" style="left: 10%; top: 20%; animation-delay: 0s;">♪</div>
+        <div class="music-note" style="left: 20%; top: 60%; animation-delay: 1s;">♫</div>
+        <div class="music-note" style="left: 40%; top: 30%; animation-delay: 2s;">♩</div>
+        <div class="music-note" style="left: 60%; top: 70%; animation-delay: 3s;">♬</div>
+        <div class="music-note" style="left: 80%; top: 40%; animation-delay: 4s;">♪</div>
+        <div class="music-note" style="left: 90%; top: 80%; animation-delay: 5s;">♫</div>
+    </header>
+
+    <main class="container">
+        <section class="artists">
+            <!-- Artist entries will go here -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 asleep1234. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="waves">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,44,136,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0,85,204,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(12,119,233,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#289eff" />
+            </g>
+        </svg>
+    </div>
+
+    <script>
+        const clientId = '749e0756e9894be89167e802e71affa8';
+        const clientSecret = 'f7111d776dbf47e0a15b10ddd726049e';
+
+        const artistUrls = [
+            'https://open.spotify.com/artist/6eO723WUfo5COLd8HF5fOx',
+            'https://open.spotify.com/artist/7ESgV378fmGODqbs1mtU15',
+            'https://open.spotify.com/artist/3UiYJV3wnzmSa2IM6SHOlv',
+            'https://open.spotify.com/artist/6tlAOedcOvdDTlZXBuusdp',
+            'https://open.spotify.com/artist/6P2hzcMJyoSrnU0CDjp7v0',
+            'https://open.spotify.com/artist/4grMxWP4eqQ8ie3oX8mhpG',
+            'https://open.spotify.com/artist/0YhCp2pFoghkgiwx5q0h1V',
+            'https://open.spotify.com/artist/5Kncg0HdNsc06Pw4Hf0V4C',
+            'https://open.spotify.com/artist/0VzVI1K2B3DoYGtrdCU2Lg'
+        ];
+
+        async function fetchAccessToken() {
+            const response = await fetch('https://accounts.spotify.com/api/token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
+                },
+                body: new URLSearchParams({
+                    grant_type: 'client_credentials'
+                })
+            });
+            const data = await response.json();
+            return data.access_token;
+        }
+
+        async function fetchArtists() {
+            const accessToken = await fetchAccessToken();
+            const artistPromises = artistUrls.map(async url => {
+                const artistId = url.split('/').pop();
+                const response = await fetch(`https://api.spotify.com/v1/artists/${artistId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+                return response.json();
+            });
+
+            return Promise.all(artistPromises);
+        }
+
+        function displayArtists(artists) {
+            const artistsContainer = document.querySelector('.artists');
+            artists.forEach(artist => {
+                const artistDiv = document.createElement('div');
+                artistDiv.classList.add('artist');
+                artistDiv.innerHTML = `
+                    <img src="${artist.images[0].url}" alt="${artist.name}">
+                    <h3>${artist.name}</h3>
+                `;
+                artistsContainer.appendChild(artistDiv);
+            });
+        }
+
+        fetchArtists().then(displayArtists).catch(error => {
+            console.error('Error fetching artists:', error);
+        });
+    </script>
+</body>
+</html>
